@@ -1,4 +1,4 @@
-package techproed.tests.day24_Priority_DependsOnMethods;
+package techproed.tests.day24_Priority_DependsOnMethods_SoftAssert;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
