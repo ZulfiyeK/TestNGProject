@@ -10,18 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class C01_Priority {
-
-    /*
-
-    Junitte test methoddlarini istedigimiz sekilde siralamak icin method isimlerini alfabetik ve numerik sirali olarak
-    yazmamiz gerekiyordu.
-    TestNG framework'unde bu siralama icin @Test notasyonu'ndan sonra parametre olarak (priority = 1) gibi onclik sirasi belirterek test methodlarimizi siralayabiliriz.
-
-    Priority kullanmadigimiz methodda priority degerini 0 (sifir) olarak kabul eder
-
-    */
-
+public class C02_Ignore {
 
     WebDriver driver;
     @BeforeMethod
@@ -33,19 +22,26 @@ public class C01_Priority {
     }
 
 
+    /*
+     Birden fazla test methodu çalıştırmak istediğimizde o anlık gereksiz gördüğümüz test methodunu
+     atlamak (ignore) isteyebiliriz. Bunun için @test notasyonu üstüne ya da yanına @ignore notasyonu
+     eklememiz yeterlidir.
+    */
+
+    @Ignore
     @Test(priority =1)
     public void amazonTest() {
-        driver.get("https://amazon.com");// ikinci
+        driver.get("https://amazon.com");
     }
 
     @Test
     public void youtubeTest() {
-        driver.get("https://youtube.com");//birinci--> default 0 oldugu icin once bu calisacak
+        driver.get("https://youtube.com");
     }
 
     @Test(priority =2)
     public void facebookTest() {
-        driver.get("https://facebook.com");//ucuncu
+        driver.get("https://facebook.com");
     }
 
     @AfterMethod
