@@ -11,6 +11,22 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class C02_Ignore {
+ /*
+      Junitte test methodlarını istediğimiz şekilde sıralamak için method isimlerini alfabetik ve numerik sıralı
+ olarak yazmamız gerekiyordu. TestNG frameworkunde bu sıralama için @Test notasyonundan sonra parametre olarak
+ (priority = 1 ) gibi öncelik sırası belirterek test methodlarımızı sıralayabiliriz.
+ Priority kullanmadığımız methodda priority değerini 0(sıfır) olarak kabul eder.
+   */
+
+/*
+    Birden fazla test methodu calistirmak istedigimizde o anlik gereksiz gordugumuz test methodunu
+    atlamak (ignore) isteyebiliriz.Bunun icin @Test notasyonu ustune ya da yanina @Ignore notasyonu
+    eklememiz yeterlidir.@Ignore notasyonu ile atladığımız method konsolda gözükmez raporlamalarda gözükür
+
+    Eger bir method tamamen iptal etmek isterseniz @Test notasyonundan sonra parametre olarak (enablefalse)
+kullanabiliriz
+
+     */
 
     WebDriver driver;
     @BeforeMethod
@@ -21,25 +37,18 @@ public class C02_Ignore {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-
-    /*
-     Birden fazla test methodu çalıştırmak istediğimizde o anlık gereksiz gördüğümüz test methodunu
-     atlamak (ignore) isteyebiliriz. Bunun için @test notasyonu üstüne ya da yanına @ignore notasyonu
-     eklememiz yeterlidir.
-    */
-
-    @Ignore
-    @Test(priority =1)
+    @Test
     public void amazonTest() {
         driver.get("https://amazon.com");
     }
 
+    @Ignore
     @Test
     public void youtubeTest() {
         driver.get("https://youtube.com");
     }
 
-    @Test(priority =2)
+    @Test(enabled = false) //bu methodu atlar gormezden gelir ve raporda da gostermez.
     public void facebookTest() {
         driver.get("https://facebook.com");
     }

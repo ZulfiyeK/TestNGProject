@@ -20,6 +20,25 @@ public class C06_SoftAssert {
     kullandigimiz assertionlar orda sonlanir ve hata varsa bunu bize konsolda belirtir
      */
 
+
+    /*
+
+    hard assertler, belirli beklenen sonuçları doğrulamak için kullanılır.
+    hard bir assert başarısız olduğunda, test hemen durur ve o noktada başarısız olur.
+    hard assertler, bir assertin başarısız olması önemli bir sorunu gösterdiğinde
+    ve beklenen sonuç elde edilmezse başka bir test yürütmenin anlamsız veya geçerli olmadığı durumlarda önerilir.
+     hard assertler, başarısızlığın kökenini hızlı bir şekilde belirlemeye yardımcı olur
+     ve neyin yanlış gittiği konusunda net geri bildirim sağlar.
+    soft assertler, bir assert başarısız olsa bile testin devam etmesine izin verir.
+    hard assertlerin aksine, soft assertler test yürütümünü durdurmaz.
+    Bunun yerine, tüm assert hatalarını toplar ve bunları testin sonunda birleştirilmiş bir rapor olarak sunar.
+
+    soft assertler, birden fazla koşulu doğrulamak veya genel test sonucunu belirlemeden önce
+    çeşitli hatalar hakkında bilgi toplamak istediğiniz durumlarda kullanışlıdır. soft assertler,
+    test yürütme sırasında daha fazla esneklik sağlar ve tek bir çalışmada birden çok hatayı analiz etmenize yardımcı olabilir.
+
+     */
+
     WebDriver driver;
     @BeforeMethod
     public void setUp() {
