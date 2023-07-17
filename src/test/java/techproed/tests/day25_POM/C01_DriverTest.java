@@ -7,28 +7,33 @@ public class C01_DriverTest {
     @Test
     public void test1() {
 
-        Driver.getDriver().get("https://www.amazon.com");
-        Driver.getDriver().get("https://www.youtube.com");
+        Driver.getDriver().get("https://amazon.com");
+        Driver.getDriver().get("https://youtube.com");
         Driver.getDriver().get("https://facebook.com");
         Driver.quitDriver();
+        /*
+        Bu methodda driver'ı if bloğu içine almadığımızdan dolayı
+        her sayfa için yeni bir driver açtığının örneğini gösterdik
+         */
     }
-    /*
-    Bu methodda driver'i if blogu icine almadigimiz icin
-    her sayfa icin heni bir driver actiginin ornegini gostermis olduk.
-    */
 
 
     @Test
     public void test2() {
-        Driver.getDriver().get("https://www.amazon.com");
-        Driver.getDriver().get("https://www.youtube.com");
+        Driver.getDriver().get("https://amazon.com");
+        Driver.getDriver().get("https://youtube.com");
         Driver.closeDriver();
         Driver.getDriver().get("https://facebook.com");
     }
 
-    //Driver driver = new Driver();
-    //driver.getDriver().get("https://www.amazon.com");
-    //Driver artik private oldugu icin (encapsulation) artik obje olusturamayiz.
+    @Test
+    public void test03() {
+        //Driver driver = new Driver();
+        //driver.getDriver().get("https://amazon.com");
 
-
+        /*
+        Bu örnekte Driver class'ında singeleton pattern kullanarak obje oluşturmanın önüne
+        geçmiş olduk
+        */
+    }
 }
