@@ -13,15 +13,18 @@ public class ConfigReader {
     */
 
    static Properties properties;
-    public static String getProperty(String key){
-        try {
-            FileInputStream fis = new FileInputStream("configuration.properties");//copy path ile dosya yolunu buraya yazdik.
-            properties = new Properties();
-            properties.load(fis);//fis'in okudugu bilgileri properties'e yukler
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+   static{
+           try {
+               FileInputStream fis = new FileInputStream("configuration.properties");//copy path ile dosya yolunu buraya yazdik.
+               properties = new Properties();
+               properties.load(fis);//fis'in okudugu bilgileri properties'e yukler
+           } catch (IOException e) {
+               throw new RuntimeException(e);
+           }
+   }
 
+
+    public static String getProperty(String key){
         String value = properties.getProperty(key);//getProperty(key) methodu properties dosyasindaki key'in degerini veriri.
         return value;
         //get property methodunu kullandigim da String olarak parametre isteyecek, ve getProperty(key) ile de bana getirecek
