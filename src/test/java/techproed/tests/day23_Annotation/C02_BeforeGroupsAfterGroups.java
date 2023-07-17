@@ -15,7 +15,7 @@ public class C02_BeforeGroupsAfterGroups {
     public void beforeSuite(){
         System.out.println("EN basta BeforeSuite calisir.");
     }
-    @BeforeGroups("zlfy")
+    @BeforeGroups({"zlfy","team"})// iki farkli grubu baglamis olduk.
     public void beforeGroups(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
