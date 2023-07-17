@@ -25,10 +25,22 @@ public class C03_PropertiesKullanim {
         Assert.assertTrue(actuelTitle.contains(expectedTitle));
 
         //arama kutusuna iphone aratalim
-        Driver.getDriver().findElement(By.id("twotabsearchtextbox")).sendKeys(ConfigReader.getProperty("saerchBox"),Keys.ENTER);
+        Driver.getDriver().findElement(By.id("twotabsearchtextbox")).sendKeys(ConfigReader.getProperty("searchBox"),Keys.ENTER);
 
         //sayfayi kapatin
         Driver.closeDriver();//Driver class'indan
+
+    }
+
+    @Test
+    public void test2() {
+
+        String amazonUrl = ConfigReader.getProperty("amazonUrl");
+        String amazonExpectedTitle = ConfigReader.getProperty("expectedTitle");
+        String aramaKutusu = ConfigReader.getProperty("searchBox");
+        System.out.println(amazonUrl);
+        System.out.println(amazonExpectedTitle);
+        System.out.println(aramaKutusu);
 
     }
 }
