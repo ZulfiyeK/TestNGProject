@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import techproed.utilities.Driver;
 
-public class BlueRentalCar {
+public class BlueRentalPage {
 
-    public BlueRentalCar(){
+    public BlueRentalPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -15,9 +15,11 @@ public class BlueRentalCar {
     @FindBy(xpath = "(//a)[1]")
     public WebElement login;
 
-    @FindBy(xpath = "")
-    public WebElement login;
+    @FindBy(xpath = "//*[@name='email']")
+    public WebElement email;
 
+    @FindBy(xpath = "//*[@id= 'dropdown-basic-button']")
+    public WebElement verify;//dogrulama
 
 
 
