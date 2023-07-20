@@ -18,11 +18,16 @@ public class BlueRentalPage {
     @FindBy(xpath = "//*[@name='email']")
     public WebElement email;
 
+    @FindBy(xpath = "//*[@name='password']")
+    public WebElement password;
+
+
     @FindBy(xpath = "//*[@id= 'dropdown-basic-button']")
     public WebElement verify;//dogrulama
 
 
-
+    @FindBy(xpath = "//*[@role='alert']")
+    public WebElement alertverify;//gelen mesaj
 
 
 
