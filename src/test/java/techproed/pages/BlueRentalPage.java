@@ -21,6 +21,8 @@ public class BlueRentalPage {
     @FindBy(xpath = "//*[@name='password']")
     public WebElement password;
 
+    @FindBy(xpath = "//*[@type='submit']")
+    public WebElement giris;
 
     @FindBy(xpath = "//*[@id= 'dropdown-basic-button']")
     public WebElement verify;// login dogrulama
@@ -29,8 +31,11 @@ public class BlueRentalPage {
     @FindBy(xpath = "//*[@role='alert']")
     public WebElement alertverify;//day27,C01_NegativTest
 
+    @FindBy(xpath = "//*[text()='Logout']")
+    public WebElement logOut;//day27,C01_NegativTest
 
-
+    @FindBy(xpath = "//*[@class='ajs-button ajs-ok']")
+    public WebElement logOutOk;
 
 
 
