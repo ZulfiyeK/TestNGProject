@@ -23,11 +23,13 @@ public class BlueRentalPage {
 
 
     @FindBy(xpath = "//*[@id= 'dropdown-basic-button']")
-    public WebElement verify;//dogrulama
+    public WebElement verify;// login dogrulama
 
 
     @FindBy(xpath = "//*[@role='alert']")
-    public WebElement alertverify;//gelen mesaj
+    public WebElement alertverify;//day27,C01_NegativTest
+
+
 
 
 
