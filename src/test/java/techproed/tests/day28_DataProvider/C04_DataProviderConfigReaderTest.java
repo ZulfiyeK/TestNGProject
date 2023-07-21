@@ -8,23 +8,25 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class C03_DataProviderTest {
+public class C04_DataProviderConfigReaderTest {
+
+
+
+
 
 
     @DataProvider
-    public static Object[][] blueRental() {
-        return new Object[][]{{"sam.walker@bluerentalcars.com","c!fas_art"},
-                             {"kate.brown@bluerentalcars.com","tad1$Fas"},
-                             {"raj.khan@bluerentalcars.com","v7Hg_va^"},
-                             {"pam.raymond@bluerentalcars.com","Nga^g6!"}};
+    public static Object[][] login() {
+        return new Object[][]{{ConfigReader.getProperty("mail1"),ConfigReader.getProperty("sifre1")},
+                              {ConfigReader.getProperty("mail2"),ConfigReader.getProperty("sifre2")},
+                              {ConfigReader.getProperty("mail3"),ConfigReader.getProperty("sifre3")},
+                              {ConfigReader.getProperty("mail4"),ConfigReader.getProperty("sifre4")}};
     }
 
-    @Test(dataProvider = "blueRental")
-    public void test01(String mail,String password) {
-        //BluerentalCar sitesine gidelim
+    //Dataprovider kullanarak .properties dosyasındaki veriler ile BlueRentalCar sitesine login olalim
+    @Test(dataProvider = "login")
+    public void test01(String mail, String password) {
         Driver.getDriver().get(ConfigReader.getProperty("blueRentalUrl"));
-
-        //DataProvider'daki mail ve password bilgileri ile login olalim
         BlueRentalPage blueRentalPage = new BlueRentalPage();
         blueRentalPage.login.click();
         ReusableMethods.bekle(2);
