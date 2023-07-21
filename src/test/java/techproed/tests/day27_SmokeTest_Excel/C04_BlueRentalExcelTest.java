@@ -29,19 +29,19 @@ public class C04_BlueRentalExcelTest {
         BlueRentalPage blueRentalPage = new BlueRentalPage();
         for (int i = 1; i <= excelReader.rowCount() ; i++) {//i'yi birden baslqattigimiz icin <= dedik.0'da baslik var.
 
-           blueRentalPage = new BlueRentalPage();
-           blueRentalPage.login.click();
+            blueRentalPage = new BlueRentalPage();
+            blueRentalPage.login.click();
             ReusableMethods.bekle(2);
 
-           String email = excelReader.getCellData(i,0);
-           String pasword = excelReader.getCellData(i,1);
+            String email = excelReader.getCellData(i,0);
+            String pasword = excelReader.getCellData(i,1);
             System.out.println(email+"||"+ pasword);
 
-           blueRentalPage.email.sendKeys(email, Keys.TAB);
+            blueRentalPage.email.sendKeys(email, Keys.TAB);
             ReusableMethods.bekle(2);
-           blueRentalPage.password.sendKeys(pasword,Keys.ENTER);
+            blueRentalPage.password.sendKeys(pasword,Keys.ENTER);
             ReusableMethods.bekle(2);
-           blueRentalPage.verify.click();
+            blueRentalPage.verify.click();
             ReusableMethods.bekle(2);
             Assert.assertTrue(blueRentalPage.logOut.isDisplayed());
             ReusableMethods.bekle(2);
