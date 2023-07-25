@@ -7,7 +7,8 @@ public class C06_DataProviderTest {
 
     @DataProvider
     public static Object[][] veriler() {
-        return new Object[][]{{"kirmizi"},
+        return new Object[][]{
+                {"kirmizi"},
                 {"mavi"},
                 {"sari"},
                 {"siyah"},
@@ -35,5 +36,5 @@ public class C06_DataProviderTest {
         System.out.println(ad);
     }
 
-
+// butun methodlari tek bir dataprovider'e baglamis olduk.
 }

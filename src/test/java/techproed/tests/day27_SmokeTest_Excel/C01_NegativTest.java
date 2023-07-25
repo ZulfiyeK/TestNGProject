@@ -10,7 +10,7 @@ import techproed.utilities.ReusableMethods;
 
 public class C01_NegativTest {
 
-    @Test
+    @Test(groups = "smoke")//day29 da gruplama yapildigi icin bunu ekledik.
     public void test01() {
         //Description:
 //Kullanimda olmayan kullanıcı adi ve şifre ile giriş yapilamamali
@@ -29,6 +29,7 @@ public class C01_NegativTest {
         blueRentalPage.email.sendKeys(ConfigReader.getProperty("fakeEmail"));
         ReusableMethods.bekle(1);
         blueRentalPage.password.sendKeys(ConfigReader.getProperty("fakePassword"), Keys.ENTER);
+        ReusableMethods.bekle(2);
 
         Assert.assertTrue(blueRentalPage.alertverify.isDisplayed());
 

@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
+import techproed.utilities.ReusableMethods;
 
 public class C03_PropertiesKullanim {
 
@@ -23,6 +24,7 @@ public class C03_PropertiesKullanim {
         String actuelTitle = Driver.getDriver().getTitle();
         String expectedTitle = ConfigReader.getProperty("expectedTitle");
         Assert.assertTrue(actuelTitle.contains(expectedTitle));
+        ReusableMethods.bekle(2);
 
         //arama kutusuna iphone aratalim
         Driver.getDriver().findElement(By.id("twotabsearchtextbox")).sendKeys(ConfigReader.getProperty("searchBox"),Keys.ENTER);

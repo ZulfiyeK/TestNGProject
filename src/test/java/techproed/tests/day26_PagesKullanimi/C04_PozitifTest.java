@@ -10,7 +10,7 @@ import techproed.utilities.ReusableMethods;
 
 public class C04_PozitifTest {
 
-    @Test
+    @Test(groups = "smoke")//day29 da gruplama yapildigi icin bunu ekledik.
     public void test1() {
    /*
     pozitif test--> tum bilgilerin dogru oldugu testlerdir.

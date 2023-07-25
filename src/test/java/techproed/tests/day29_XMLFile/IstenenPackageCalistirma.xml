@@ -4,6 +4,7 @@
     <test name="Istenen packageyi calistirma">
 <packages>
     <package name="techproed.tests.day25_POM"/>
+    <package name="techproed.tests.day23_Annotation"/>
 </packages>
     </test>
 </suite>
