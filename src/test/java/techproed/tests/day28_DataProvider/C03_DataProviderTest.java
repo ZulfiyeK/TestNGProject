@@ -30,7 +30,7 @@ public class C03_DataProviderTest {
         ReusableMethods.bekle(2);
         blueRentalPage.email.sendKeys(mail, Keys.TAB,password,Keys.ENTER);
         ReusableMethods.bekle(2);
-        ReusableMethods.tumSayfaResmi();
+        ReusableMethods.tumSayfaResmi("blueRental");
         Driver.closeDriver();
 
 

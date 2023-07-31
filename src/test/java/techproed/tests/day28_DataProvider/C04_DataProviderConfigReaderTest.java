@@ -32,7 +32,7 @@ public class C04_DataProviderConfigReaderTest {
         ReusableMethods.bekle(2);
         blueRentalPage.email.sendKeys(mail, Keys.TAB,password,Keys.ENTER);
         ReusableMethods.bekle(2);
-        ReusableMethods.tumSayfaResmi();
+        ReusableMethods.tumSayfaResmi("login");
         Driver.closeDriver();
 
 

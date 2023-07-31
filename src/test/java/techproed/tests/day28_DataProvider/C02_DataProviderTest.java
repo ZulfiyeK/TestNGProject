@@ -34,7 +34,7 @@ public class C02_DataProviderTest {
         ReusableMethods.bekle(2);
 
         //Her arama icin sayfa resmi alalim
-        ReusableMethods.tumSayfaResmi();
+        ReusableMethods.tumSayfaResmi("araclar");
 
 
 
